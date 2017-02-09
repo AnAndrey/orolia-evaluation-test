@@ -1,0 +1,46 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.24720.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orolia.FileManager", "Orolia.FileManager.csproj", "{4FFB4135-54DF-4D62-B01A-DF90BF76AEAF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Executer", "..\..\..\..\..\Projects\Web\orolia\Executer\Executer.csproj", "{DE9F5F31-9BEC-40E0-9D7F-D0B308A4328D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orolia.FileManagerInterfaces", "FileManagerInterfaces\Orolia.FileManagerInterfaces.csproj", "{9853FFA6-38FC-48A7-8F05-52796D572904}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orolia.DataParcerInterfaces", "DataParcerInterfaces\Orolia.DataParcerInterfaces.csproj", "{0A8A58A6-EA6A-4926-A444-9D9EE44BC1DA}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orolia.DataParcer", "DataParcer\Orolia.DataParcer.csproj", "{4E131791-F992-40C0-A956-6F96042D6A67}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{4FFB4135-54DF-4D62-B01A-DF90BF76AEAF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4FFB4135-54DF-4D62-B01A-DF90BF76AEAF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4FFB4135-54DF-4D62-B01A-DF90BF76AEAF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4FFB4135-54DF-4D62-B01A-DF90BF76AEAF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DE9F5F31-9BEC-40E0-9D7F-D0B308A4328D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DE9F5F31-9BEC-40E0-9D7F-D0B308A4328D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DE9F5F31-9BEC-40E0-9D7F-D0B308A4328D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DE9F5F31-9BEC-40E0-9D7F-D0B308A4328D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9853FFA6-38FC-48A7-8F05-52796D572904}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9853FFA6-38FC-48A7-8F05-52796D572904}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9853FFA6-38FC-48A7-8F05-52796D572904}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9853FFA6-38FC-48A7-8F05-52796D572904}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0A8A58A6-EA6A-4926-A444-9D9EE44BC1DA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0A8A58A6-EA6A-4926-A444-9D9EE44BC1DA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0A8A58A6-EA6A-4926-A444-9D9EE44BC1DA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0A8A58A6-EA6A-4926-A444-9D9EE44BC1DA}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4E131791-F992-40C0-A956-6F96042D6A67}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4E131791-F992-40C0-A956-6F96042D6A67}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4E131791-F992-40C0-A956-6F96042D6A67}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4E131791-F992-40C0-A956-6F96042D6A67}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
