@@ -1,15 +1,21 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections;
+using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using CodeContracts;
+using Orolia.FileManagerInterfaces;
 
-namespace Executer
+namespace Orolia.FileManager
 {
     public class FileManager:IFileManager
     {
         public IEnumerable<string> GetFiles(string path)
         {
             Requires.NotNullOrEmpty(path, "path");
-            return Directory.GetFiles(path);
+            var fullFileNames = Directory.GetFiles(path).ToList();
+
+            return fullFileNames.Select(Path.GetFileName);
         }
         public void Delete(string path)
         {

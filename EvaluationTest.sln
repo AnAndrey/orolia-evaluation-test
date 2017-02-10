@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.24720.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orolia.FileManager", "Orolia.FileManager.csproj", "{4FFB4135-54DF-4D62-B01A-DF90BF76AEAF}"
 EndProject
@@ -12,6 +12,13 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Orolia.DataParcer", "DataParcer\Orolia.DataParcer.csproj", "{4E131791-F992-40C0-A956-6F96042D6A67}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Executer", "Executer\Executer.csproj", "{DE9F5F31-9BEC-40E0-9D7F-D0B308A4328D}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5313844E-8CC4-44A3-9AF4-73413D89469C}"
+	ProjectSection(SolutionItems) = preProject
+		..\global.json = ..\global.json
+	EndProjectSection
+EndProject
+Project("{8BB2217D-0F2D-49D1-97BC-3654ED321F3B}") = "WebService", "WebService\WebService.xproj", "{FCA85511-FEF7-4477-9AA0-41449D91DC76}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -39,6 +46,10 @@ Global
 		{DE9F5F31-9BEC-40E0-9D7F-D0B308A4328D}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DE9F5F31-9BEC-40E0-9D7F-D0B308A4328D}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DE9F5F31-9BEC-40E0-9D7F-D0B308A4328D}.Release|Any CPU.Build.0 = Release|Any CPU
+		{FCA85511-FEF7-4477-9AA0-41449D91DC76}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FCA85511-FEF7-4477-9AA0-41449D91DC76}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FCA85511-FEF7-4477-9AA0-41449D91DC76}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FCA85511-FEF7-4477-9AA0-41449D91DC76}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

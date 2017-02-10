@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Executer
+namespace Orolia.FileManagerInterfaces
 {
 
     public interface IFileManager

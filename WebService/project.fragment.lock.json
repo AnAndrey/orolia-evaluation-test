@@ -1,0 +1,75 @@
+{
+  "version": 2,
+  "exports": {
+    "Orolia.DataParcerInterfaces/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/Orolia.DataParcerInterfaces.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/Orolia.DataParcerInterfaces.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Orolia.DataParcerInterfaces.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "Orolia.DataParcer/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/Orolia.DataParcer.dll": {}
+      },
+      "runtime": {
+        "../packages/CodeContracts.1.0.5680.18392/lib/net40/CodeContracts.dll": {},
+        "bin/Debug/Orolia.DataParcer.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Orolia.DataParcer.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "Orolia.FileManagerInterfaces/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/Orolia.FileManagerInterfaces.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/Orolia.FileManagerInterfaces.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Orolia.FileManagerInterfaces.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    },
+    "Orolia.FileManager/1.0.0": {
+      "type": "project",
+      "framework": ".NETFramework,Version=v4.5.2",
+      "compile": {
+        "bin/Debug/Orolia.FileManager.dll": {}
+      },
+      "runtime": {
+        "bin/Debug/Orolia.FileManager.dll": {},
+        "packages/CodeContracts.1.0.5680.18392/lib/net40/CodeContracts.dll": {}
+      },
+      "contentFiles": {
+        "bin/Debug/Orolia.FileManager.pdb": {
+          "buildAction": "None",
+          "codeLanguage": "any",
+          "copyToOutput": true
+        }
+      }
+    }
+  }
+}
