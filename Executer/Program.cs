@@ -8,17 +8,8 @@ namespace Executer
         private static string path = @"C:\Projects\Web\orolia\SampleFiles";
         static void Main(string[] args)
         {
-            var files = Directory.GetFiles(path);
-            foreach (var file in files)
-            {
-                Console.WriteLine(file);
-                //foreach (var data in ParceFile(file))
-                //{
-                //    Console.WriteLine(data.Mark + " " + data.Value);
-                //}
-                
-
-            }
+             File.Delete("C:\\Projects\\Web\\orolia\\SampleFiles\\big - Copy (2).ssd");
+            
         }
 
  

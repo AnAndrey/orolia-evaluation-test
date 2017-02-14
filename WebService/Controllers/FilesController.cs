@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
@@ -11,6 +12,7 @@ using Orolia.FileManagerInterfaces;
 namespace WebService.Controllers
 {
     [Route("api/[controller]")]
+    [EnableCors("CorsPolicy")]
     public class FilesController : Controller
     {
         private FileManageSettings FileManageSettings { get; }
@@ -50,7 +52,7 @@ namespace WebService.Controllers
 
         // DELETE api/values/5
         [HttpDelete("{name}")]
-        public void Delete(string name)
+        public void DeleteFile(string name)
         {
             FileManager.Delete(Path.Combine( FileManageSettings.FilePath, name));
         }

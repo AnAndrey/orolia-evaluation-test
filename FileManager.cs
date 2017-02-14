@@ -20,7 +20,7 @@ namespace Orolia.FileManager
         public void Delete(string path)
         {
             Requires.NotNullOrEmpty(path, "path");
-            Directory.Delete(path);
+            File.Delete(path);
         }
         public void Move(string source, string destanation)
         {
