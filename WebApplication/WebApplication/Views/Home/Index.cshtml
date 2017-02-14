@@ -23,14 +23,14 @@
 
 }
 
-
-<div ng-app="app-main">
-    <div ng-controller="dataController"></div>
-        <div ng-controller="filesController">
-            <div class="files-grid" ui-grid="gridOptions" ui-grid-selection style="height: 600px"></div>
-            <div ng-controller="uploadController">
-                <input type="file" ngf-select="onFileSelect($files, gridOptions)" multiple>
-            </div>
+<div ng-app="app-main" id="wrapper-body">
+    <div ng-controller="filesController" id="first-body">
+        <div class="files-grid" ui-grid="gridOptions" ui-grid-selection style="height: 500px"></div>
+        <div ng-controller="uploadController">
+            <input type="file" ngf-select="onFileSelect($files, gridOptions)" multiple>
+        </div>
     </div>
-
+    <div id="second-body">
+        <my-elem></my-elem>
+    </div>
 </div>

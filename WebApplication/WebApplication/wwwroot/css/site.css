@@ -9,6 +9,15 @@ html, body {
     margin: 0 auto;
     padding: 0 10px;
     display: block;
+    left: 50%;
+}
+
+.container-body {
+    
+    margin-left: 30px;
+    margin-right: 30px;
+    padding: 0 10px;
+    display: block;
 }
 
 header {
@@ -54,7 +63,6 @@ main {
     }
 
     footer, .wrapper:after {
-        height: 50px;
     }
 
         footer .container {
@@ -76,4 +84,21 @@ main {
 .files-grid {
   width: 350px;
   height: 100%;
+}
+
+#wrapper-body {
+    width: auto;
+    border: 1px solid black;
+    overflow: hidden; /* will contain if #first is longer than #second */
+}
+#first-body {
+    width: auto;
+    float:left; /* add this */
+}
+#second-body {
+    overflow: hidden; /* if you don't want #second to wrap below #first */
+}
+
+hr {
+    border-top: 1px solid #eeeeee;
 }

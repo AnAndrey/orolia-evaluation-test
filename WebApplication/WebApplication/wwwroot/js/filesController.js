@@ -11,7 +11,7 @@
                 function (json) {
                     var data = [];
                     $.each(json,
-                        function (i, val) { // обрабатываем полученные данные
+                        function (i, val) { 
                             console.log(val);
                             data.push(
                                 { File: val, Delete: '' });
@@ -21,14 +21,66 @@
                 });
             }
 
+            
+            var rowSelected = function(row) {
+                console.log(row.entity.File);
 
-            $scope.gridOptions = {
+
+                $.getJSON("http://localhost:13009/api/data/big(11).ssd",
+                {},
+                function (json) {
+
+                    var chart = AmCharts.makeChart("chartdiv", {
+                        "type": "serial",
+                        "theme": "none",
+                        "marginLeft": 20,
+                        "pathToImages": "http://www.amcharts.com/lib/3/images/",
+                        "dataProvider": json,
+                        "valueAxes": [{
+                            "axisAlpha": 0,
+                            "inside": true,
+                            "position": "left",
+                            "ignoreAxisWidth": true
+                        }],
+                        "graphs": [{
+                            "balloonText": "[[category]]<br><b><span style='font-size:14px;'>[[value]]</span></b>",
+                            "bullet": "round",
+                            "bulletSize": 6,
+                            "lineColor": "#d1655d",
+                            "lineThickness": 2,
+                            "negativeLineColor": "#637bb6",
+                            "type": "line",
+                            "valueField": "value"
+                        }],
+                        "chartScrollbar": {},
+                        "chartCursor": {
+                            "cursorAlpha": 0,
+                            "cursorPosition": "mouse"
+                        },
+                        "categoryField": "mark",
+                        "categoryAxis": {
+                            "parseDates": false,
+                            "minorGridAlpha": 0.1,
+                            "minorGridEnabled": true,
+                            "labelRotation": 90
+                        }
+                    });
+                });
+
+            }
+
+        $scope.gridOptions = {
                 // comment the next line to enable column reordering/moving feature
                 enableColumnMenus: false,
                 enableColumnResizing: true,
                 enableRowSelection: true, 
                 enableRowHeaderSelection: false,
-                onRegisterApi: function (gridApi) { $scope.gridApi = gridApi; },
+                onRegisterApi: function (gridApi) {
+                    $scope.gridApi = gridApi; gridApi.selection.on.rowSelectionChanged($scope, function (row) {
+                        console.log(row.entity.File);
+                        rowSelected(row);
+                    });
+                },
                 multiSelect: false,
                 odifierKeysToMultiSelect :false,
                 noUnselect: true

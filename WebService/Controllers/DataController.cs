@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
+using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Options;
 using Orolia.DataParcerInterfaces;
@@ -13,6 +14,7 @@ using Orolia.DataParcerInterfaces;
 namespace WebService.Controllers
 {
     [Route("api/[controller]")]
+    [EnableCors("CorsPolicy")]
     public class DataController : Controller
     {
         private FileManageSettings FileManageSettings { get; }
