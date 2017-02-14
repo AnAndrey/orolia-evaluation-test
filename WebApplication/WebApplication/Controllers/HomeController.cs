@@ -2,12 +2,13 @@
 using System.Collections.Generic;
 using System.IO;
 using System;
-using WebApplication.Models;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Serialization;
 using NuGet.Protocol.Core.v3;
+using WebApplication.DTO;
+using WebApplication.Models;
 
 namespace WebApplication.Controllers
 {
@@ -21,25 +22,22 @@ namespace WebApplication.Controllers
 
         public IActionResult Index()
         {
-            // The view being returned is calculated based on the name of the
-            // controller (Home) and the name of the action method (Index).
-            // So in this case, the view returned is /Views/Home/Index.cshtml.
-
             return View();
         }
 
         public ActionResult Settings(string angularModuleName = "app-main.settings")
         {
             var builder = new ConfigurationBuilder()
-             .SetBasePath(Directory.GetCurrentDirectory())
-            .AddJsonFile("appsettings.json");
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json");
 
             Configuration = builder.Build();
 
 
             var settingsDto = new SettingsDto()
             {
-                WebApiBaseUrl = Configuration["WebApiBaseUrl"]
+                FileServiceUrl = Configuration["FileServiceUrl"],
+                DataServiceUrl = Configuration["DataServiceUrl"]
             };
 
             var serializerSettings = new JsonSerializerSettings
@@ -58,31 +56,5 @@ namespace WebApplication.Controllers
 
             return View(settingsModel);
         }
-
-        public IActionResult About()
-        {
-            // Creates a model and passes it on to the view.
-            Employee[] model =
-            {
-                new Employee { Name = "Alfred", Title = "Manager" },
-                new Employee { Name = "Sarah", Title = "Accountant" }
-            };
-
-            return View(model);
-        }
-
- 
-    }
-
-    public class SettingsDto
-    {
-        public string WebApiBaseUrl { get; set; }
-        public string WebApiVersion { get; set; }
-    }
-
-    public class SettingsViewModel
-    {
-        public string SettingsJson { get; set; }
-        public string AngularModuleName { get; set; }
     }
 }

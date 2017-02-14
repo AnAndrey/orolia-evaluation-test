@@ -6,7 +6,7 @@
     module.controller("filesController", ["settings", "$scope", function (settings, $scope) {
             
             $scope.refresh = function () {
-                $.getJSON(settings.webApiBaseUrl,
+                $.getJSON(settings.fileServiceUrl,
                 {},
                 function (json) {
                     var data = [];
@@ -14,19 +14,18 @@
                         function (i, val) { 
                             console.log(val);
                             data.push(
-                                { File: val, Delete: '' });
+                                { File: val, Delete: '', FileServiceUrl: settings.fileServiceUrl, DataServiceUrl: settings.dataServiceUrl });
                         });
 
                     $scope.gridOptions.data = data;
                 });
             }
-
             
-            var rowSelected = function(row) {
+            var rowSelected = function (row) {
                 console.log(row.entity.File);
+                var url = row.entity.DataServiceUrl + row.entity.File;
 
-
-                $.getJSON("http://localhost:13009/api/data/big(11).ssd",
+                $.getJSON(url,
                 {},
                 function (json) {
 
@@ -69,6 +68,8 @@
 
             }
 
+        $scope.setings = settings;
+
         $scope.gridOptions = {
                 // comment the next line to enable column reordering/moving feature
                 enableColumnMenus: false,
@@ -92,7 +93,7 @@
 
                     var param = encodeURIComponent(row.entity.File);
                     $.ajax({
-                        url: settings.webApiBaseUrl + param,
+                        url: settings.fileServiceUrl + param,
                         type: 'DELETE',
                         success: function (result) {
                             var index = $scope.gridOptions.data.indexOf(row.entity);
@@ -123,7 +124,7 @@
 
 
 
-            console.log(settings.webApiBaseUrl);
+            console.log(settings.fileServiceUrl);
             $scope.refresh();
 
     }]);

@@ -62,9 +62,6 @@ main {
         display: block;
     }
 
-    footer, .wrapper:after {
-    }
-
         footer .container {
             border-top: 1px solid #e1e1e1;
             padding-top: 10px;

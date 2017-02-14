@@ -1,5 +1,5 @@
 ﻿@using WebApplication.Controllers
-@model WebApplication.Controllers.SettingsViewModel
+@model WebApplication.Models.SettingsViewModel
 
 @{
     ViewData["Title"] = "";
@@ -10,17 +10,12 @@
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/ng-file-upload-bower-12.2.13/ng-file-upload-shim.min.js"></script>
     <script src="~/lib/ng-file-upload-bower-12.2.13/ng-file-upload.min.js"></script>
-
     <script src="~/home/settings"></script>
-    <script src="http://ui-grid.info/release/ui-grid.js"></script>
-
+    <script src="~/lib/ui-grid/ui-grid.js"></script>
     <script src="~/js/app-main.js"></script>
     <script src="~/js/filesController.js"></script>
-    
     <script src="~/js/dataController.js"></script>
     <script src="~/js/uploadController.js"></script>
-    
-
 }
 
 <div ng-app="app-main" id="wrapper-body">

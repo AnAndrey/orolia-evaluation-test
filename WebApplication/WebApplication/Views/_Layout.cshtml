@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="description" content="@ViewData["Description"]" />
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
-    <link rel="stylesheet" href="http://ui-grid.info/release/ui-grid.css" type="text/css">
+    <link rel="stylesheet" href="~/css/ui-grid.css" type="text/css">
     <!-- include the core styles -->
     <link rel="stylesheet" href="~/lib/alertify.js-0.3.11/themes/alertify.core.css" />
     <link rel="stylesheet" href="~/lib/alertify.js-0.3.11/themes/alertify.default.css" />
@@ -14,11 +14,12 @@
     <!-- include a theme, can be included into the core instead of 2 separate files -->
     <script src="~/lib/alertify.js-0.3.11/lib/alertify.min.js"></script>
     
-    <script src="https://www.amcharts.com/lib/3/amcharts.js"></script>
-    <script src="https://www.amcharts.com/lib/3/serial.js"></script>
-    <script src="https://www.amcharts.com/lib/3/plugins/export/export.min.js"></script>
-    <link rel="stylesheet" href="https://www.amcharts.com/lib/3/plugins/export/export.css" type="text/css" media="all" />
-    <script src="https://www.amcharts.com/lib/3/themes/light.js"></script>
+    <script src="~/lib/amchart/amcharts.js"></script>
+    <script src="~/lib/amchart/serial.js"></script>
+    <script src="~/lib/amchart/export.min.js"></script>
+    <link rel="stylesheet" href="~/lib/amchart/export.css" type="text/css" media="all" />
+    <script src="~/lib/amchart/light.js"></script>
+
 </head>
 <body>
 
@@ -45,7 +46,6 @@
     </div>
 </footer>
 
-    <script src="~/js/site.js" asp-append-version="true"></script>
     @RenderSection("scripts", required: false)
 </body>
 </html>

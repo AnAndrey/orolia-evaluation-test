@@ -33,13 +33,6 @@ namespace WebService.Controllers
             return FileManager.GetFiles(FileManageSettings.FilePath);
         }
 
-        //// GET api/files/5
-        //[HttpGet("{id}")]
-        //public string Get(string id)
-        //{
-        //    return "value";
-        //}
-
         // POST api/values
         [HttpPost]
         public async Task<IActionResult> PostFile()
@@ -69,8 +62,6 @@ namespace WebService.Controllers
                 return new BadRequestResult();
             }
 
-            // process uploaded files
-            // Don't rely on or trust the FileName property without validation.
             var size = files.Sum(f => f.Length);
 
             return Ok(new { count = files.Count, size, copiedFiles});
@@ -88,10 +79,5 @@ namespace WebService.Controllers
         {
             FileManager.Delete(Path.Combine( FileManageSettings.FilePath, name));
         }
-    }
-
-    public class FileManageSettings
-    {
-        public string FilePath { get; set; }
     }
 }

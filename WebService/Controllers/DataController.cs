@@ -27,11 +27,10 @@ namespace WebService.Controllers
         }
 
         // GET api/values/5
-        [HttpGet("{id}")]
+        [HttpGet("{name}")]
         public IEnumerable<SSDData> Get(string name)
         {
-            //return new List<string>() {"dfg", "1111"};
-            return DataParcer.ParceFile(Path.Combine(FileManageSettings.FilePath, "big.ssd"));
+            return DataParcer.ParceFile(Path.Combine(FileManageSettings.FilePath, name));
         }
     }
 }

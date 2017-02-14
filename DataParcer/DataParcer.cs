@@ -15,22 +15,24 @@ namespace Orolia.DataParcer
             const int countOfParameters = 2;
             var datas = new List<SSDData>();
 
-            using (var reader = File.OpenText(filePath))
+            if (File.Exists(filePath))
             {
-                string line;
-                while ((line = reader.ReadLine()) != null && !String.IsNullOrEmpty(line))
+                using (var reader = File.OpenText(filePath))
                 {
-                    if (line.IsHeader())
-                        continue;
+                    string line;
+                    while ((line = reader.ReadLine()) != null && !String.IsNullOrEmpty(line))
+                    {
+                        if (line.IsHeader())
+                            continue;
 
-                    var items = line.Split(' ');
-                    if (items.Length != countOfParameters)
-                        throw new InvalidDataException(Err_InvalidPair);
+                        var items = line.Split(' ');
+                        if (items.Length != countOfParameters)
+                            throw new InvalidDataException(Err_InvalidPair);
 
-                    datas.Add(new SSDData() { Mark = items[0], Value = items[1] });
+                        datas.Add(new SSDData() {Mark = items[0], Value = items[1]});
+                    }
                 }
             }
-
             return datas;
         }
     }
