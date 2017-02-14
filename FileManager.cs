@@ -22,11 +22,29 @@ namespace Orolia.FileManager
             Requires.NotNullOrEmpty(path, "path");
             File.Delete(path);
         }
-        public void Move(string source, string destanation)
+        public string Move(string source, string destanation)
         {
             Requires.NotNullOrEmpty(source, "source");
             Requires.NotNullOrEmpty(destanation, "destanation");
-            Directory.Move(source,destanation);
+
+
+            var fileNameOnly = Path.GetFileNameWithoutExtension(destanation);
+            var extension = Path.GetExtension(destanation);
+            var path = Path.GetDirectoryName(destanation);
+            var newFullPath = destanation;
+            var newFileName = $"{fileNameOnly}{extension}"; ;
+
+            if (string.IsNullOrEmpty(path)) return newFileName;
+
+            var count = 1;
+            while (File.Exists(newFullPath))
+            {
+                newFileName = $"{fileNameOnly}({count++}){extension}";
+                newFullPath = Path.Combine(path, newFileName);
+            }
+
+            File.Move(source, newFullPath);
+            return newFileName;
         }
     }
 }

@@ -7,7 +7,7 @@ namespace Orolia.FileManagerInterfaces
     {
         IEnumerable<string> GetFiles(string path);
         void Delete(string path);
-        void Move(string source, string destanation);
+        string Move(string source, string destanation);
 
     }
 }

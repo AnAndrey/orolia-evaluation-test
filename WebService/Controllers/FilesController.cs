@@ -2,8 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Cors;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.Options;
@@ -40,8 +42,38 @@ namespace WebService.Controllers
 
         // POST api/values
         [HttpPost]
-        public void Post([FromBody]string value)
+        public async Task<IActionResult> PostFile()
         {
+            var files = Request.Form.Files;
+            if (files == null || files.Count == 0)
+                return new OkResult();
+
+            var copiedFiles = new List<string>();
+            try
+            {
+                foreach (var formFile in files)
+                {
+                    if (formFile.Length <= 0) continue;
+
+                    var filePath = Path.GetTempFileName();
+                    using (var stream = new FileStream(filePath, FileMode.Create))
+                    {
+                        await formFile.CopyToAsync(stream);
+                    }
+                    var filename = FileManager.Move(filePath, Path.Combine( FileManageSettings.FilePath, formFile.FileName));
+                    if(!String.IsNullOrEmpty(filename)) copiedFiles.Add(filename);
+                }
+            }
+            catch (Exception)
+            {
+                return new BadRequestResult();
+            }
+
+            // process uploaded files
+            // Don't rely on or trust the FileName property without validation.
+            var size = files.Sum(f => f.Length);
+
+            return Ok(new { count = files.Count, size, copiedFiles});
         }
 
         // PUT api/values/5
