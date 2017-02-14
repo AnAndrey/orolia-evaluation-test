@@ -26,7 +26,12 @@
                 // comment the next line to enable column reordering/moving feature
                 enableColumnMenus: false,
                 enableColumnResizing: true,
-                onRegisterApi: function (gridApi) { $scope.gridApi = gridApi; }
+                enableRowSelection: true, 
+                enableRowHeaderSelection: false,
+                onRegisterApi: function (gridApi) { $scope.gridApi = gridApi; },
+                multiSelect: false,
+                odifierKeysToMultiSelect :false,
+                noUnselect: true
             };
 
             $scope.deleteRow = function (row) {

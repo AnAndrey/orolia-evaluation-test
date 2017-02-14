@@ -14,10 +14,9 @@
                     $.each(data.data.copiedFiles,
                         function (i, file) { 
                             console.log(file);
-                            gridOptions.data.splice(0, 0, { File: file, Delete: '' });
+                            gridOptions.data.splice(0, 0, { File: file, Delete: "" });
                             alertify.success("Successfully uploaded.");
                         });
-
                 }
             }, function (resp) {
                 alertify.success("Upload failed.");
