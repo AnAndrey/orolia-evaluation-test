@@ -1,0 +1,10 @@
+﻿@model WebApplication.Controllers.SettingsViewModel
+
+@{
+    Layout = null;
+}
+
+(function () {
+    angular.module('@Model.AngularModuleName', [])
+    .constant('settings', @Html.Raw(Model.SettingsJson));
+    })();
