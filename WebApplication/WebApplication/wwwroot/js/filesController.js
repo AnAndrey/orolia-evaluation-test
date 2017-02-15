@@ -12,7 +12,6 @@
                 var data = [];
                 $.each(json,
                     function (i, val) { 
-                        console.log(val);
                         data.push(
                             { File: val, Delete: '', FileServiceUrl: settings.fileServiceUrl, DataServiceUrl: settings.dataServiceUrl });
                     });
@@ -22,7 +21,6 @@
         }
             
         var rowSelected = function (row) {
-            console.log(row.entity.File);
             var url = row.entity.DataServiceUrl + row.entity.File;
 
             $.getJSON(url,
@@ -109,7 +107,8 @@
                 name: 'Delete',
                 cellTemplate: '<button class="btn primary" ng-click="grid.appScope.deleteRow(row)">Delete</button>',
                 width: 67,
-                allowCellFocus: false
+                allowCellFocus: false,
+                enableSorting: false
             }];
         $scope.refresh();
     }]);
